@@ -45,7 +45,18 @@ def rotacao(img):
     cols = img.shape[1]
     MN = cv2.getRotationMatrix2D((cols/2, rows/2), 90, 1)
     #AARUMAER LINHA 48
-    translacao(img, MN, (cols, rows))
+    return cv2.warpAffine(img, MN, (cols, rows))
+
+def reflexao_vertical(img):
+    vertical = cv2.flip(img, 0)
+    return vertical 
+def reflexao_horizontal(img):
+    horizontal = cv2.flip(img, 1)
+    return horizontal
+def reflexao_vert_hori(img):
+    vert_hori = cv2.flip(img, -1)
+    return vert_hori
+    
 
 
 

@@ -76,7 +76,21 @@ while ans:
         rot = rotacao(img1)
         mostrar_salvar('rotacao.png', rot, rot)
     elif ans=="8":
-      print("\n Goodbye") 
+        print('\n Você escolheu reflexão')
+        op = input("""
+        1. Vertical
+        2. Horizontal
+        3. Vertical e Horizontal
+        """)
+        if op=='1':
+            vert = reflexao_vertical(img1)
+            mostrar_salvar('reflexao.png', vert, vert)
+        elif op=='2':
+            hor = reflexao_horizontal(img1)
+            mostrar_salvar('horizontal.png', hor, hor)
+        elif op=='3':
+            both = reflexao_vert_hori(img1)
+            mostrar_salvar('both.png', both, both)
     elif ans=="9":
       print("\n Goodbye") 
       break

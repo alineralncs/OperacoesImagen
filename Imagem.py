@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 #____________________________________________________________
-# ler, salvar e redmensionar imagem
+# ler, salvar e redmensionar imagem 
 def lerImagem(imagePath):
     return cv2.imread(imagePath)
 
@@ -13,9 +13,9 @@ def salvarImagem(name, imagePath):
 def tamanhoigualImagem(img2, img1):
     return cv2.resize(img2, (img1.shape[1], img1.shape[0]))
 
-
-#____________________________________________________________
 # Operações Aritméticas
+#____________________________________________________________
+
 def adicao(img1, img2):
     return cv2.add(img1,img2)
 
@@ -30,9 +30,9 @@ def multiplicacao(img1, img2):
 #____________________________________________________________
 # Transformações Geométricas
 # Translação, Rotação, Escala, Reflexão.
-def escala(img):
+def escala_cubic(img):
     return cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
-
+    
 def translacao(img):
     rows = img.shape[0]
     cols = img.shape[1]
@@ -58,6 +58,26 @@ def reflexao_vert_hori(img):
     return vert_hori
     
 
+
+def mostrar_antes(img):
+    cv2.imshow('image',img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+def mostrar_salvar(name, imagePath, funcao):
+    print ("""
+    
+    1. Ver Imagem
+    2. Salvar Nova Imagem
+    """)
+
+    opc =input('Deseja ver ou salvar?')
+    if opc=='2':
+        salvarImagem(name, imagePath)
+    elif opc=='1':
+        cv2.imshow('image',funcao)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
 
 

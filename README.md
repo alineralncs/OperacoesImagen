@@ -1,7 +1,7 @@
 # Processamento de Imagens
 Operações Aritméticas e Transformações Geométricas em imagens utilizando python.
 
-Para esse trabalho foi utilizado a biblioteca OpenCV e a numpy. 
+Para esse trabalho foi utilizado a biblioteca OpenCV.
 
 Funções implementadas: 
 # Operações Aritméticas 
